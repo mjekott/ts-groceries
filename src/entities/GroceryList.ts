@@ -21,6 +21,6 @@ export class GroceryList extends BaseEntity {
   @CreateDateColumn({ type: 'timestamp' })
   created: string;
 
-  @ManyToOne(() => Item)
-  item: Item[];
+  @ManyToOne(() => Item, { cascade: true })
+  items: Item[];
 }
