@@ -7,6 +7,6 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 export const server = () => {
-  app.listen(8090);
-  console.log('app is listening on port 8090');
+  app.listen(process.env.PORT);
+  console.log(`app is listening on port ${process.env.PORT}`);
 };
