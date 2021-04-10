@@ -7,6 +7,7 @@ import {
   PrimaryGeneratedColumn,
   ManyToOne,
   JoinColumn,
+  OneToMany,
 } from 'typeorm';
 import { Item } from './Item';
 
@@ -21,6 +22,6 @@ export class GroceryList extends BaseEntity {
   @CreateDateColumn({ type: 'timestamp' })
   created: string;
 
-  @ManyToOne(() => Item, { cascade: true })
+  @OneToMany(() => Item, (item) => item.groceryList)
   items: Item[];
 }

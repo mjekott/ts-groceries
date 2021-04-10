@@ -19,6 +19,6 @@ export class Item extends BaseEntity {
   @CreateDateColumn({ type: 'timestamp' })
   created: string;
 
-  @ManyToOne(() => GroceryList)
-  GroceryList: GroceryList;
+  @ManyToOne(() => GroceryList, (groceryList) => groceryList.items)
+  groceryList: GroceryList;
 }
